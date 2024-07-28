@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: salmon;
+    background: rgb(227, 186, 181);
     z-index: -2;
 }
 
@@ -27,25 +27,27 @@ body {
 .top {
     display: flex;
     justify-content: space-between;
-    gap: 80px;
+    gap: 40px;
 }
 
-.canvas {
+canvas {
     width: 600px;
     height: 400px;
-    /* background-color: aquamarine; */
+    background-color: white;
     border: 2px solid black;
     border-radius: 10px;
 }
 
 #font-size {
-    width: 140px;
+    width: 160px;
     height: 22px;
+    border-radius: 8px;
 }
 
 #bg-color, #color-picker {
-    width: 140px;
+    width: 160px;
     height: 30px;
+    border-radius: 8px;
 }
 
 .bottom {
@@ -61,7 +63,6 @@ body {
     font-size: 18px;
     font-family: "Comic Neue", cursive;
     font-weight: 800;
-    /* color: white; */
 }
 
 #btn-1 {
@@ -77,6 +78,19 @@ body {
 }
 
 #title {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
+    font-family:'Combo';
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0px;
+}
+
+.color, .background, .font-size {
+    line-height: 0px;
+    font-family: "Comic Neue", cursive;
+}
+
+#input {
+    font-size: 20px;
+    padding-left: 12px;
+    font-weight: 800;
 }

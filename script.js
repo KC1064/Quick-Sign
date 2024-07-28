@@ -9,11 +9,12 @@ const download = document.getElementById("btn-2");
 const retrieve = document.getElementById("btn-3");
 
 // Get Context of canvas
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext("2d");
 
 // Initialize drawing state
 let isDrawing = false;
-
+let lastX = 0;
+let lastY = 0;
 
 // Choose the color of the stroke
 color_picker.addEventListener("change", (e) => {
@@ -43,12 +44,12 @@ canvas.addEventListener("mouseup", () => {
   isDrawing = false;
 });
 
-canvas.addEventListener("mouseout", () => {
-  isDrawing = false;
-});
+// canvas.addEventListener("mouseout", () => {
+//   isDrawing = false;
+// });
 
 // Change background color
-bg.addEventListener('change', (event) => {
+bg.addEventListener("change", (event) => {
   ctx.fillStyle = event.target.value;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
@@ -60,20 +61,24 @@ clear.addEventListener("click", () => {
 
 // Download canvas
 download.addEventListener("click", () => {
-  const link = document.createElement('a');
-  link.download = 'my-canvas.png';
+  localStorage.setItem("canvasContents", canvas.toDataURL());
+  const link = document.createElement("a");
+  link.download = "my-canvas.png";
   link.href = canvas.toDataURL();
   link.click();
 });
 
+// Font-size
+font.addEventListener("change", (e) => {
+  ctx.lineWidth = e.target.value;
+});
+
 // Retrieve canvas from local storage
 retrieve.addEventListener("click", () => {
-  const savedCanvas = localStorage.getItem('canvasContents');
+  const savedCanvas = localStorage.getItem("canvasContents");
   if (savedCanvas) {
-    const img = new Image();
+    let img = new Image();
     img.src = savedCanvas;
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0);
-    };
+    ctx.drawImage(img, 0, 0);
   }
 });

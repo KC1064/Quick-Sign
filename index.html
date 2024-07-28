@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Sign</title>
+    <title> Quick Sign</title>
+    <link rel="shortcut icon" href="./favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,19 +14,19 @@
         <h2 id="title">QUICK SIGN</h2>
         <div class="top">
             <div class="color">
-                <p>Text Color</p>
+                <p id="input">Stroke Color</p>
                 <input type="color" name="" id="color-picker">
             </div>
             <div class="background">
-                <p>Background Color</p>
+                <p id="input">Canvas Color</p>
                 <input type="color" name="" id="bg-color">
             </div>
-            <div>
-                <p>Font Size</p>
+            <div class="font-size">
+                <p id="input">Font Size</p>
                 <input type="number" name="" id="font-size">
             </div>
         </div>
-        <div class="canvas" id="canvas"></div>
+        <canvas id="canvas"></canvas>
         <div class="bottom">
             <button id="btn-1">Clear</button>
             <button id="btn-2">Save & Download</button>
@@ -34,5 +35,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
